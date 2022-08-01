@@ -166,28 +166,28 @@ local function resolveid(image, flag)
 								end
 							end)
 							codename = string.sub(codename, 1, 24) .. tostring(fixes)
-							local fold = isfolder("./PrimordialSpace Lib")
+							local fold = isfolder("./PrimordialSpace")
 							if fold then
 							else
-								makefolder("./PrimordialSpace Lib")
+								makefolder("./PrimordialSpace")
 							end
-							fold = isfolder("./PrimordialSpace Lib/Themes")
+							fold = isfolder("./PrimordialSpace/Themes")
 							if fold then
 							else
-								makefolder("./PrimordialSpace Lib/Themes")
+								makefolder("./PrimordialSpace/Themes")
 							end
-							fold = isfolder("./PrimordialSpace Lib/Themes/SynapseAssetsCache")
+							fold = isfolder("./PrimordialSpace/Themes/SynapseAssetsCache")
 							if fold then
 							else
-								makefolder("./PrimordialSpace Lib Themes/SynapseAssetsCache")
+								makefolder("./PrimordialSpace Themes/SynapseAssetsCache")
 							end
-							if not fold or not isfile("./PrimordialSpace Lib/Themes/SynapseAssetsCache/" .. codename .. ".dat") then
+							if not fold or not isfile("./PrimordialSpace/Themes/SynapseAssetsCache/" .. codename .. ".dat") then
 								local res = game:HttpGet(string.sub(image, 15))
 								if res ~= nil then
-									writefile("./PrimordialSpace Lib/Themes/SynapseAssetsCache/" .. codename .. ".dat", res)
+									writefile("./PrimordialSpace/Themes/SynapseAssetsCache/" .. codename .. ".dat", res)
 								end
 							end
-							return getsynasset(readfile("./PrimordialSpace Lib/Themes/SynapseAssetsCache/" .. codename .. ".dat"))
+							return getsynasset(readfile("./PrimordialSpace/Themes/SynapseAssetsCache/" .. codename .. ".dat"))
 						end)
 						if x and e ~= nil then
 							return e
@@ -1532,8 +1532,8 @@ function library:CreateWindow(options, ...)
 	local windowoptions = options
 	local windowName = options.Name or "Unnamed Window"
 	options.Name = windowName
-	if windowName and #windowName > 0 and library.WorkspaceName == "PrimordialSpace Lib" then
-		library.WorkspaceName = convertfilename(windowName, "PrimordialSpace Lib")
+	if windowName and #windowName > 0 and library.WorkspaceName == "PrimordialSpace" then
+		library.WorkspaceName = convertfilename(windowName, "PrimordialSpace")
 	end
 	local PrimordialSpaceLibrary = Instance_new("ScreenGui")
 	library.MainScreenGui, MainScreenGui = PrimordialSpaceLibrary, PrimordialSpaceLibrary
@@ -4606,14 +4606,14 @@ function library:CreateWindow(options, ...)
 					local realDropdownHolder = Instance_new("ScrollingFrame")
 					local realDropdownHolderList = Instance_new("UIListLayout")
 					local dropdownEnabled = false
-					if not isfolder("./PrimordialSpace Lib") then
-						makefolder("./PrimordialSpace Lib")
+					if not isfolder("./PrimordialSpace") then
+						makefolder("./PrimordialSpace")
 					end
-					local common_string = "./PrimordialSpace Lib/" .. tostring(custom_workspace or library.WorkspaceName)
+					local common_string = "./PrimordialSpace/" .. tostring(custom_workspace or library.WorkspaceName)
 					local function resolvelist(nofold)
 						if custom_workspace ~= options.Workspace then
 							custom_workspace = options.Workspace
-							common_string = "./PrimordialSpace Lib/" .. tostring(custom_workspace or library.WorkspaceName)
+							common_string = "./PrimordialSpace/" .. tostring(custom_workspace or library.WorkspaceName)
 						end
 						if not isfolder or not makefolder or not listfiles then
 							return {}
@@ -6747,7 +6747,7 @@ function library:CreateWindow(options, ...)
 		}}, {"AddPersistence", "__Designer.Persistence.ThemeFile", filessection, {
 			Name = "Theme Profile",
 			Flag = "__Designer.Files.ThemeFile",
-			Workspace = "PrimordialSpace Lib Themes",
+			Workspace = "PrimordialSpace Themes",
 			Flags = flags,
 			Suffix = "Theme",
 			Desginer = true
