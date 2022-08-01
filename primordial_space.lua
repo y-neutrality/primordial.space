@@ -6787,7 +6787,7 @@ function library:CreateWindow(options, ...)
 				lasthidebing = os.clock()
 			end
 		}}, {"AddLabel", "__Designer.Label.Version", settingssection, {
-			Name = "Library Version: " .. tostring(library.Version or "?")
+			Name = "Current Version: " .. tostring(library.Version or "?")
 		}}}
 		if setclipboard and daaata[8] then
 			local common_table = daaata[8][4]
