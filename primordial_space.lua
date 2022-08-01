@@ -3568,7 +3568,7 @@ function library:CreateWindow(options, ...)
 				slider.Parent = newSlider
 				slider.Active = true
 				slider.BackgroundColor3 = library.colors.topGradient
-				local colored_slider_BackgroundColor3 = {slider, "BackgroundColor3", "topGradient"}
+				local colored_slider_BackgroundColor3 = {slider, "main"}
 				colored[1 + #colored] = colored_slider_BackgroundColor3
 				slider.BorderColor3 = library.colors.elementBorder
 				colored[1 + #colored] = {slider, "BorderColor3", "elementBorder"}
