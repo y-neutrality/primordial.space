@@ -3568,7 +3568,7 @@ function library:CreateWindow(options, ...)
 				slider.Parent = newSlider
 				slider.Active = true
 				slider.BackgroundColor3 = library.colors.topGradient
-				local colored_slider_BackgroundColor3 = {slider, "main"}
+				local colored_slider_BackgroundColor3 = {slider, "BackgroundColor3", "topGradient"}
 				colored[1 + #colored] = colored_slider_BackgroundColor3
 				slider.BorderColor3 = library.colors.elementBorder
 				colored[1 + #colored] = {slider, "BorderColor3", "elementBorder"}
@@ -6733,7 +6733,7 @@ function library:CreateWindow(options, ...)
 		}}, {"AddSlider", "__Designer.Slider.ImageTransparency", backgroundsection, {
 			Name = "Image Transparency",
 			Flag = "__Designer.Background.ImageTransparency",
-			Value = 95,
+			Value = 50,
 			Min = 0,
 			Max = 100,
 			Format = "Image Transparency: %s%%",
@@ -6841,7 +6841,7 @@ function library:CreateWindow(options, ...)
 		end
 		if options.Credit ~= false then
 			daaata[1 + #daaata] = {"AddLabel", "__Designer.Label.Creator", detailssection, {
-				Text = "Support - primordial.space"
+				Text = "Support - https://primordial.space"
 			}}
 		elseif "Gee, thanks for your support." then
 		end
